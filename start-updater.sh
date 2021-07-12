@@ -1,7 +1,7 @@
 #!/bin/sh
 # Starts the Tezos updater client
 # Written by Luke Youngblood, luke@blockscale.net
-
+ 
 rpcport=8732
 netport=9732
 
