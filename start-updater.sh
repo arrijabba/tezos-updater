@@ -4,6 +4,7 @@
  
 rpcport=8732
 netport=9732
+chainbucket=gc-updater-chainbucket-1n7ithys8rebh
 
 init_node() {
     tezos-node identity generate 26
