@@ -18,6 +18,8 @@ init_node() {
 
 start_node() {
 	# If storage is already on the latest version, this command has no effect
+	wget https://mainnet.xtz-shots.io/full -O tezos-snapshot.full
+	tezos-node snapshot import tezos-snapshot.full
 	tezos-node upgrade storage
 	if [ $? -ne 0 ]
 	then
@@ -162,8 +164,8 @@ continuous() {
 echo "Initializing the node at `date`..."
 init_node
 echo "Syncing initial chain data with stored chain data in S3 at `date`..."
-s3_sync_down
+# s3_sync_down
 echo "Starting the node at `date`..."
 start_node
 echo "Starting the continuous loop at `date`..."
-continuous
+# continuous
