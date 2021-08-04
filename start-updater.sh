@@ -168,4 +168,4 @@ echo "Syncing initial chain data with stored chain data in S3 at `date`..."
 echo "Starting the node at `date`..."
 start_node
 echo "Starting the continuous loop at `date`..."
-# continuous
+continuous
