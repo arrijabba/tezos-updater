@@ -150,11 +150,11 @@ continuous() {
 		echo "Sleeping for 30 minutes at `date`..."
 		sleep 1800
 		echo "Cleanly shutting down the node so we can update S3 with the latest chaindata at `date`..."
-# 		kill_node
+		kill_node
 		echo "Syncing chain data to S3 at `date`..."
 		s3_sync_up
 		echo "Restarting the node after syncing to S3 at `date`..."
-# 		start_node
+		start_node
 	done
 }
 
@@ -167,4 +167,4 @@ s3_sync_down
 echo "Starting the node at `date`..."
 start_node
 echo "Starting the continuous loop at `date`..."
-continuous
+s3_sync_up
