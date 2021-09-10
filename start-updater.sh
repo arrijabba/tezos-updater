@@ -24,7 +24,8 @@ start_node() {
         echo "Node failed to start; exiting."
         exit 2
 	fi
-	tezos-node run &
+	tezos-node reconstruct
+# 	tezos-node run &
 	if [ $? -ne 0 ]
 	then
         echo "Node failed to start; exiting."
@@ -149,7 +150,7 @@ continuous() {
 		echo "Sleeping for 30 minutes at `date`..."
 		sleep 1800
 		echo "Cleanly shutting down the node so we can update S3 with the latest chaindata at `date`..."
-		kill_node
+# 		kill_node
 		echo "Syncing chain data to S3 at `date`..."
 		s3_sync_up
 		echo "Restarting the node after syncing to S3 at `date`..."
