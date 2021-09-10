@@ -153,7 +153,7 @@ continuous() {
 		echo "Syncing chain data to S3 at `date`..."
 		s3_sync_up
 		echo "Restarting the node after syncing to S3 at `date`..."
-		start_node
+# 		start_node
 	done
 }
 
@@ -162,7 +162,7 @@ continuous() {
 echo "Initializing the node at `date`..."
 init_node
 echo "Syncing initial chain data with stored chain data in S3 at `date`..."
-# s3_sync_down
+s3_sync_down
 echo "Starting the node at `date`..."
 start_node
 echo "Starting the continuous loop at `date`..."
