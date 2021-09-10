@@ -18,8 +18,6 @@ init_node() {
 
 start_node() {
 	# If storage is already on the latest version, this command has no effect
-	wget https://mainnet.xtz-shots.io/full -O tezos-snapshot.full
-	tezos-node snapshot import tezos-snapshot.full --reconstruct
 	tezos-node upgrade storage
 	if [ $? -ne 0 ]
 	then
