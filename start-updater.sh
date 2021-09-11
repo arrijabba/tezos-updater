@@ -45,7 +45,7 @@ s3_sync_down() {
 		s3key=node2
 	fi
 
-	aws s3 sync --region $region --no-progress s3://$chainbucket/$s3key /home/tezos/.tezos-node
+	aws s3 sync --request-payer requester --region $region --no-progress s3://$chainbucket/$s3key /home/tezos/.tezos-node
 	if [ $? -ne 0 ]
 	then
         echo "aws s3 sync command failed; exiting."
